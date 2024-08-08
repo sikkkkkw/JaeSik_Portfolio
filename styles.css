@@ -109,52 +109,51 @@ nav ul li {
 main {
     width: 100%;
     height: 100%;
-    padding: 100px 20px;
+    padding: 0 20px;
     max-width: 1280px;
     margin: 0 auto;
 }
-#about{
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* education 세션  */
+#education{
+    min-height: 100vh;
+    
 }
-.about-container {
+.education-container {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     margin :60px 0;
 }
 
-.about-right, .about-left {
-    
-    padding: 2rem;
+.education-right, .education-left { 
+    padding: 11rem 2rem;
     border-radius: 10px;
     width: 50%;
 }
 
-.about-right h1.resume {
-    font-size: 2rem;
+.education-right h1.resume {
+    font-size: 2.5rem;
     color: #00c4cc;
     margin-bottom: 1rem;
 }
 .skill {
-    margin-top: 65px;
+    margin-top: 85px;
 }
 .studying{
-    margin-top: 30px;
+    margin-top: 15px;
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 1rem;
 }
-.about-right p{
+.education-right p{
     margin: 0 10px;
     font-size: 1.2rem;
     color: #666;
     line-height: 1.5;
-    margin-bottom: 2em;
+    margin-bottom: 1.3em;
     
 }
-.about-right span{
+.education-right span{
     margin: 0 10px;
     font-size: 1.2rem;
     color: #666;
@@ -162,18 +161,97 @@ main {
     margin-bottom: 1.2rem;
     
 }
-.about-left img{
+.education-left img{
     margin: 5px 10px;
     
 }
 
-.about-right h3.education, .about-left h3.skill {
+.education-right h3.education, .education-left h3.skill {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 1rem;
 }
-
-
+/* about 세션 */
+#about{
+    min-height: 100vh;
+    
+}
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin :60px 0;
+}
+.about-right, .about-left {
+    padding: 11rem 2rem;
+    border-radius: 10px;
+    width: 50%;
+}
+.abouts-resume {
+    font-size: 2.5rem;
+    color: #00c4cc;
+    margin-bottom: 1rem;
+}
+.about-right, .about-text {
+    
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 1.2rem; 
+}
+.about-right h3{
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.about-left h3{
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.btn-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+.btn-container button {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #00c4cc;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-container button:hover {
+    background-color: #009fa3;
+}
+.details-container {
+    width: 100%;
+}
+.details-container div {
+    padding: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.details-container div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+.details-container h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.details-container p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
 /* 푸터 스타일링 */
 footer {
     text-align: center;
@@ -222,21 +300,21 @@ footer {
         padding: 60px 20px;
         margin: 0 auto;
     }
-    .about-container {
+    .education-container {
         flex-direction: column;
     }
-    .about-container {
+    .education-container {
         display: flex;
         justify-content: space-between;
         margin: 60px 0;
     }
-    .about-right{
+    .education-right{
         padding: 20px 20px 0 20px;
     }
-    .about-left{
+    .education-left{
         padding: 0 20px 20px 20px;
     }
-    .about-right, .about-left {
+    .education-right, .education-left {
         
         border-radius: 10px;
         width: 100%;

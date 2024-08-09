@@ -121,6 +121,7 @@ main {
 .education-container {
     display: flex;
     justify-content: space-between;
+    max-width: 1240px;
     gap: 1rem;
     margin :60px 0;
 }
@@ -182,6 +183,7 @@ main {
 .about-container {
     display: flex;
     justify-content: space-between;
+    max-width: 1240px;
     gap: 1rem;
     margin :60px 0;
 }
@@ -271,8 +273,9 @@ main {
     display: flex;
     justify-content: space-between;
     margin :60px 0;
-    max-width: 1200px;
+    max-width: 1240px;
     margin: 0 auto;
+    
 }
 .project-resume{
     font-size: 2.5rem;
@@ -285,13 +288,13 @@ main {
     width: 50%;
 }
 .project-right img{
-    max-width: 536px;
+    width: 100%;
     height: 301px;
     margin-bottom: 20px;
     border: 1px solid #000;
 }
 .project-left img{
-    max-width: 536px;
+    width: 100%;
     height: 301px;
     margin-bottom: 20px;
     border: 1px solid #000;
@@ -479,9 +482,34 @@ footer {
         padding: 0 20px 20px 20px;
     }
     .about-right, .about-left {
-        
         border-radius: 10px;
         width: 100%;
+    }
+    .project-container {
+        flex-direction: column;
+        
+    }
+    .project-right, .project-left {
+        border-radius: 10px;
+        width: 100%;
+    }
+    .project-right{
+        padding: 20px 20px 0 20px;
+    }
+    .project-left{
+        padding: 0 20px 20px 20px;
+    }
+    .project-right img{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+        border: 1px solid #000;
+    }
+    .project-left img{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+        border: 1px solid #000;
     }
 }
 

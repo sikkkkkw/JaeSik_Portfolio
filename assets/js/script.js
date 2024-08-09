@@ -20,3 +20,23 @@ window.addEventListener('scroll', () => {
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // for Mobile or negative scrolling
 });
+
+// 모달창
+document.querySelectorAll('.open-modal').forEach(button => {
+    button.addEventListener('click', function() {
+        const modalId = this.getAttribute('data-modal');
+        document.getElementById(modalId).style.display = 'block';
+    });
+});
+
+document.querySelectorAll('.close-modal').forEach(button => {
+    button.addEventListener('click', function() {
+        this.closest('.modal').style.display = 'none';
+    });
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+    }
+});

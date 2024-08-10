@@ -380,6 +380,25 @@ main {
     background-color: #000;
     color: #fff;
 }
+/* Progress Bar 스타일 */
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar-fill {
+    height: 20px;
+    background-color: #4caf50;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    border-radius: 25px;
+    transition: width 0.4s ease-in-out;
+}
+
 /* 모달창  스타일*/
 .modal {
     display: none;

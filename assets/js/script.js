@@ -59,3 +59,8 @@ window.addEventListener('click', function(event) {
         event.target.style.display = 'none';
     }
 });
+
+// 사이드 이동
+document.querySelector('.buttons button').addEventListener('click', function() {
+    window.location.href = 'https://yourwebsite.com';
+});

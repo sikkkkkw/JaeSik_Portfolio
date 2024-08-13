@@ -265,6 +265,7 @@ main {
     color: #666;
     line-height: 1.5;
 }
+
 /* 프로젝트 세션 */
 #projects{
     min-height: 100vh;
@@ -362,44 +363,36 @@ main {
 
 .buttons {
     margin-top: 20px;
-    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
 }
 
-.buttons button {
-    padding: 10px 30px;
-    border: 1px solid #000;
-    background-color: #fff;
-    cursor: pointer;
-    margin-right: 20px;
-    border-radius: 5px; 
-    transition: background-color 0.3s ease, color 0.3s ease;
-    
+.button {
+    display: inline-block;
+    padding: 10px 40px; /* 패딩을 줄여서 작은 화면에서도 잘 보이도록 설정 */
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    flex-grow: 1; /* 버튼이 동일한 비율로 늘어나도록 설정 */
+    margin: 5px; /* 버튼 사이에 간격을 추가 */
+    text-overflow: ellipsis; /* 텍스트가 길 경우 생략 기호(...)로 처리 */
+    white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+    overflow: hidden; /* 텍스트 오버플로 방지 */
 }
-
+.button:hover {
+    background-color: #0056b3;
+}
 .buttons button:hover {
     background-color: #000;
     color: #fff;
 }
-/* Progress Bar 스타일 */
-.progress-bar {
-    width: 100%;
-    background-color: #e0e0e0;
-    border-radius: 25px;
-    overflow: hidden;
-    margin-top: 10px;
-}
 
-.progress-bar-fill {
-    height: 20px;
-    background-color: #4caf50;
-    text-align: center;
-    line-height: 20px;
-    color: white;
-    border-radius: 25px;
-    transition: width 0.4s ease-in-out;
-}
 
-/* 모달창  스타일*/
+/* 모달 스타일 */
 .modal {
     display: none;
     position: fixed;
@@ -414,37 +407,81 @@ main {
 
 .modal-content {
     background-color: #fff;
-    margin: 8% auto;
+    margin: 1% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     max-width: 800px;
 }
-.modal-content img{
+
+.modal-content img {
     width: 100%;
     height: auto;
     margin-bottom: 20px;
 }
 
+/* 모달 설명글 스타일 */
+.modal-description {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+.mt{
+    margin-top: 8px;
+}
 
 .modal-footer {
     text-align: right;
     margin-top: 10px;
 }
 
-.close-modal {
-    padding: 10px 20px;
-    border: 1px solid #000;
-    background-color: #fff;
-    cursor: pointer;
+.modal-features {
+    margin-top: 10px;
+    padding-left: 0;
+    list-style-type: none;
 }
 
-.close-modal:hover {
-    background-color: #000;
-    color: #fff;
+.modal-features li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
 }
 
+.modal-features li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    color: #4CAF50; /* 체크 마크 색상 */
+    line-height: 1.6;
+}
+.flex-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 텍스트와 게이지 바 사이 간격 */
+    white-space: nowrap; /* 텍스트가 줄 바꿈되지 않도록 설정 */
+}
 
+.progress-bar {
+    flex-grow: 1; /* 게이지 바가 남은 공간을 차지하도록 설정 */
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 150px; /* 게이지 바의 최소 너비 설정 */
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 10px 0 0 10px; /* 좌측만 둥글게 설정 */
+    transition: width 0.4s ease; /* 부드러운 애니메이션 효과 */
+}
 /* 푸터 스타일링 */
 footer {
     text-align: center;
@@ -537,6 +574,9 @@ footer {
     .project-left{
         padding: 0 20px 20px 20px;
     }
+    .project-left {
+        margin-top: 0px;
+    }
     .project-right img{
         width: 100%;
         height: 100%;
@@ -549,6 +589,8 @@ footer {
         margin-bottom: 20px;
         border: 1px solid #000;
     }
+    
+    
 }
 @media (max-width: 1080px) {
     
@@ -645,6 +687,16 @@ footer {
         margin-bottom: 20px;
         border: 1px solid #000;
     } */
+    .flex-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .progress-bar {
+        width: 100%; /* 모바일에서는 전체 너비 사용 */
+    }
+
 }
 
 @media (max-width: 470px) {
@@ -697,4 +749,5 @@ footer {
         border-radius: 5px;
         transition: background-color 0.3s ease, color 0.3s ease;
     }
+
 }

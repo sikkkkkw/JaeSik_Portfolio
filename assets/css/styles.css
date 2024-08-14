@@ -422,7 +422,7 @@ main {
 }
 
 .buttons {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; 
@@ -453,26 +453,15 @@ main {
 /* 게시판 섹션 */
 .section {
     margin: 0 auto;
-    margin-top: 160px;
+    margin-top: 90px;
     margin-bottom: 90px;
     padding: 10px;
-    max-width: 1200px;
+    max-width: 1280px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.section-title {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.section-subtitle {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 30px;
-}
 
 iframe {
     border: none;
@@ -498,7 +487,7 @@ iframe {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 800px;
+    max-width: 50%;
 }
 
 .modal-content img {
@@ -513,6 +502,8 @@ iframe {
     font-size: 16px;
     color: #333;
     line-height: 1.6;
+    word-break: keep-all; /* 단어가 중간에서 잘리지 않도록 설정 */
+    white-space: normal;
 }
 .mt{
     margin-top: 8px;

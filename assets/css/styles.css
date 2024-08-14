@@ -185,6 +185,8 @@ main {
     line-height: 1.5;
     margin-bottom: 1.3em;
     line-height: 2;
+    word-break: keep-all; 
+    white-space: normal;
     
 }
 .education-right span{
@@ -225,6 +227,10 @@ main {
     width: 50%;
 }
 
+.about-left {
+    margin-top: 75px;
+}
+
 .abouts-resume {
     font-size: 2.5rem;
     color: #00c4cc;
@@ -241,8 +247,8 @@ main {
     font-size: 2.5rem;
     color: #333;
     line-height: 1.7;
-    margin-bottom: 1rem;
-    word-break: keep-all; /* 단어가 중간에서 잘리지 않도록 설정 */
+    margin-bottom: 2rem;
+    word-break: keep-all; 
     white-space: normal;
 }
 .about-left h3{
@@ -260,7 +266,7 @@ main {
 /* 버튼 컨테이너 중앙 정렬 및 마진 */
 .btn-container {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 5rem;
 }
 
 /* 버튼 스타일 */
@@ -275,7 +281,7 @@ main {
     color: #fff; /* 텍스트 색상 */
     cursor: pointer; /* 마우스를 올렸을 때 커서 변경 */
     transition: background-color 0.3s, transform 0.3s; /* 색상 및 크기 변화에 애니메이션 적용 */
-    text-decoration: none; /* 링크의 기본 밑줄 제거 */
+    text-decoration: none; 
 }
 
 /* GitHub 아이콘 스타일 */

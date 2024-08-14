@@ -153,7 +153,7 @@ main {
 .education-container {
     display: flex;
     justify-content: space-between;
-    max-width: 1240px;
+    max-width: 1280px;
     gap: 1rem;
     margin :60px 0;
 }
@@ -217,7 +217,7 @@ main {
 .about-container {
     display: flex;
     justify-content: space-between;
-    max-width: 1240px;
+    max-width: 1280px;
     gap: 1rem;
     margin :60px 0;
 }
@@ -237,7 +237,7 @@ main {
     margin-bottom: 1rem;
 }
 .about-right, .about-text {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #666;
     line-height: 1.5;
     margin-bottom: 1.2rem; 
@@ -266,7 +266,8 @@ main {
 /* 버튼 컨테이너 중앙 정렬 및 마진 */
 .btn-container {
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 4rem;
+
 }
 
 /* 버튼 스타일 */
@@ -320,7 +321,7 @@ main {
     margin-bottom: 1rem;
 }
 .details-container p {
-    font-size: 1rem;
+    font-size: 18px;
     color: #666;
     line-height: 1.5;
 }
@@ -334,7 +335,7 @@ main {
     display: flex;
     justify-content: space-between;
     margin :60px 0;
-    max-width: 1240px;
+    max-width: 1280px;
     margin: 0 auto;
     
 }

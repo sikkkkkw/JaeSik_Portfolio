@@ -17,17 +17,18 @@ body {
 
 /* 헤더 스타일링 */
 header {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     color: #333;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 30px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    /* transition: background-color 0.3s ease; */
-    transition: transform 0.6s ease; /* 부드러운 애니메이션을 위해 transition 추가 */
-    transform: translateY(-100%); /* 초기 상태에서 숨김 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s ease;
+    transform: translateY(-100%);
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* 글꼴 적용 */
 }
 
 /* 헤더 내 flex 컨테이너 */
@@ -39,7 +40,6 @@ header {
     width: 100%;
     margin: 0 auto;
     transition: flex-direction 0.3s ease;
-    
 }
 
 /* 브랜드 스타일링 */
@@ -47,17 +47,20 @@ header {
     display: flex;
     align-items: center;
     transition: margin-bottom 0.3s ease;
+    font-family: 'Merriweather', serif; /* 헤더 텍스트에 다른 글꼴 적용 */
 }
 
 .navbar-brand img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     transition: width 0.3s ease, height 0.3s ease;
+    border-radius: 50%; /* 이미지를 원형으로 */
 }
 
 header h1 {
-    margin: 5px 10px;
-    font-size: 1.5em;
+    margin: 0 15px;
+    font-size: 1.8em;
+    color: #007bff; /* 텍스트 색상 변경 */
 }
 
 /* 내비게이션 스타일링 */
@@ -77,19 +80,46 @@ nav ul {
 nav ul li {
     list-style-type: none;
 }
-
+/* 네비게이션 링크 스타일링 */
 .nav-ul li a {
-    height: 100%;
-    padding: 0 2.5rem;
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    color: #333;
-    transition: padding 0.3s ease, font-size 0.3s ease;
+    margin-top: 10px;
+    padding: 0 1.5rem;
+    display: inline-block;
+    position: relative;
+    font-size: 1.4rem;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease, font-size 0.3s ease;
 }
+
+/* 밑줄 추가를 위한 ::after 의사 요소 사용 */
+.nav-ul li a::after {
+    content: '';
+    display: block; /* 블록 요소로 설정하여 텍스트 길이에 맞춤 */
+    width: 100%; /* 텍스트 길이에 맞게 100% */
+    height: 2px;
+    background-color: #007bff;
+    margin-top: 5px; /* 밑줄과 텍스트 사이의 간격 조정 */
+    transform: scaleX(0); /* 초기 크기를 0으로 설정 */
+    transform-origin: left; /* 밑줄이 왼쪽에서 확장 */
+    transition: transform 0.3s ease;
+}
+
+/* 마우스를 올렸을 때 밑줄 애니메이션 */
+.nav-ul li a:hover::after {
+    transform: scaleX(1); /* 밑줄이 텍스트 길이에 맞게 확장 */
+}
+
+/* 네비게이션 링크에 마우스를 올렸을 때 */
+.nav-ul li a:hover {
+    color: #0056b3;
+}
+
+/* 스크롤 시 헤더 숨김 */
 .scrolled {
-    top: -100px; /* 헤더 높이만큼 숨김 */
+    top: -100px;
 }
+
 /* 메인화면 */
 .mainbox {
     width: 100%;
@@ -194,52 +224,74 @@ main {
     border-radius: 10px;
     width: 50%;
 }
-.about-right h2{
-    margin-bottom: 10px;
-    line-height: 1.7;
-}
+
 .abouts-resume {
     font-size: 2.5rem;
     color: #00c4cc;
     margin-bottom: 1rem;
 }
 .about-right, .about-text {
-    
     font-size: 1.2rem;
     color: #666;
     line-height: 1.5;
     margin-bottom: 1.2rem; 
+    
 }
 .about-right h3{
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: #333;
+    line-height: 1.7;
     margin-bottom: 1rem;
+    word-break: keep-all; /* 단어가 중간에서 잘리지 않도록 설정 */
+    white-space: normal;
 }
 .about-left h3{
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 1rem;
+    word-break: keep-all; /* 단어가 중간에서 잘리지 않도록 설정 */
+    white-space: normal;
 }
 .about-text{
-    line-height: 1.5;
+    line-height: 1.7;
+    word-break: keep-all; /* 단어가 중간에서 잘리지 않도록 설정 */
+    white-space: normal;
 }
+/* 버튼 컨테이너 중앙 정렬 및 마진 */
 .btn-container {
     text-align: center;
     margin-top: 2rem;
 }
-.btn-container button {
-    padding: 0.8rem 1.6rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    background: #00c4cc;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s;
+
+/* 버튼 스타일 */
+.btn-container a {
+    display: inline-flex; /* 아이콘과 텍스트를 나란히 배치 */
+    align-items: center; /* 수직 중앙 정렬 */
+    padding: 1rem 3rem; /* 내부 여백 */
+    font-size: 1.4rem; /* 텍스트 크기 */
+    border: none; /* 테두리 제거 */
+    border-radius: 30px; /* 버튼의 모서리를 둥글게 */
+    background: #00c4cc; /* 배경 색상 */
+    color: #fff; /* 텍스트 색상 */
+    cursor: pointer; /* 마우스를 올렸을 때 커서 변경 */
+    transition: background-color 0.3s, transform 0.3s; /* 색상 및 크기 변화에 애니메이션 적용 */
+    text-decoration: none; /* 링크의 기본 밑줄 제거 */
 }
-.btn-container button:hover {
-    background-color: #009fa3;
+
+/* GitHub 아이콘 스타일 */
+.github-icon {
+    width: 30px; /* 아이콘 크기 */
+    height: 30px;
+    margin-right: 10px; /* 텍스트와 아이콘 사이 여백 */
 }
+
+/* 마우스를 올렸을 때 배경 색상 및 크기 변화 */
+.btn-container a:hover {
+    background-color: #007b83; /* 배경 색상 변경 */
+    transform: scale(1.05); /* 버튼을 살짝 키움 */
+}
+
+
 .details-container {
     width: 100%;
 }
@@ -496,6 +548,7 @@ iframe {
 }
 
 .progress-bar {
+    margin-top: 9px;
     flex-grow: 1; /* 게이지 바가 남은 공간을 차지하도록 설정 */
     height: 20px;
     background-color: #e0e0e0;
@@ -651,7 +704,7 @@ footer {
     }
 
     .nav-ul li a {
-        padding: 0.5rem 1rem;
+        padding: 0rem 2rem;
         font-size: 18px;
     }
     main {
@@ -737,6 +790,12 @@ footer {
     }
     .headerFlex {
         align-items: center;
+    }
+    .about-right h3 {
+        font-size: 2rem;
+        color: #333;
+        line-height: 1.7;
+        margin-bottom: 1rem;
     }
 
     .navbar-brand {

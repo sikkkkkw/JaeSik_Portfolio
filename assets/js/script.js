@@ -65,3 +65,40 @@ window.addEventListener('load', function() {
     const loadingScreen = document.getElementById('loading-screen');
     loadingScreen.style.display = 'none';
 });
+// 스크롤 내리면 띄우기
+document.addEventListener('DOMContentLoaded', function () {
+    const resumesSection = document.getElementById('resume');
+    const aboutsSection = document.getElementById('about');
+    const projectsSection = document.getElementById('projects');
+
+    function handleScroll() {
+        const viewportHeight = window.innerHeight;
+
+        // 교육 섹션
+        const resumeTop = resumesSection.getBoundingClientRect().top;
+        if (resumeTop < viewportHeight * 0.75) {
+            resumesSection.classList.add('fade-in');
+        } else {
+            resumesSection.classList.remove('fade-in');
+        }
+
+        // 소개 섹션
+        const aboutTop = aboutsSection.getBoundingClientRect().top;
+        if (aboutTop < viewportHeight * 0.75) {
+            aboutsSection.classList.add('fade-in');
+        } else {
+            aboutsSection.classList.remove('fade-in');
+        }
+
+        // 프로젝트 섹션
+        const projectsTop = projectsSection.getBoundingClientRect().top;
+        if (projectsTop < viewportHeight * 0.75) {
+            projectsSection.classList.add('fade-in');
+        } else {
+            projectsSection.classList.remove('fade-in');
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check the initial scroll position
+});

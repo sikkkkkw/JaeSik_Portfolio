@@ -145,12 +145,17 @@ main {
     margin: 0 auto;
     flex: 1; 
 }
-/* education 세션  */
-#education{
+
+/* resume 세션  */
+#resume{
     min-height: 100vh;
-    
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
-.education-container {
+.fade-in {
+    opacity: 1 !important;
+}
+.resume-container {
     display: flex;
     justify-content: space-between;
     max-width: 1280px;
@@ -158,13 +163,13 @@ main {
     margin :60px 0;
 }
 
-.education-right, .education-left { 
+.resume-right, .resume-left { 
     padding: 11rem 2rem;
     border-radius: 10px;
     width: 50%;
 }
 
-.education-right h1.resume {
+.resume-right h1.resume {
     font-size: 2.5rem;
     color: #00c4cc;
     margin-bottom: 1rem;
@@ -178,7 +183,7 @@ main {
     color: #333;
     margin-bottom: 1rem;
 }
-.education-right p{
+.resume-right p{
     margin: 0 10px;
     font-size: 1.2rem;
     color: #666;
@@ -189,7 +194,7 @@ main {
     white-space: normal;
     
 }
-.education-right span{
+.resume-right span{
     margin: 0 10px;
     font-size: 1.2rem;
     color: #666;
@@ -197,13 +202,13 @@ main {
     margin-bottom: 1.2rem;
     
 }
-.education-left img{
+.resume-left img{
     margin: 5px 10px;
     
 }
 
 
-.education-right h3.education, .education-left h3.skill {
+.resume-right h3.resume, .resume-left h3.skill {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 1rem;
@@ -211,7 +216,11 @@ main {
 /* about 세션 */
 #about{
     min-height: 100vh;
-    
+    opacity: 0;
+    transition: opacity 1s ease-in-out;   
+}
+.fade-in {
+    opacity: 1 !important;
 }
 
 .about-container {
@@ -329,7 +338,11 @@ main {
 /* 프로젝트 세션 */
 #projects{
     min-height: 100vh;
-    
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.fade-in {
+    opacity: 1 !important;
 }
 .project-container {
     display: flex;
@@ -641,19 +654,19 @@ footer {
         padding: 60px 20px;
         margin: 0 auto;
     }
-    /* .education-container {
+    /* .resume-container {
         flex-direction: column;
         display: flex;
         justify-content: space-between;
         margin: 60px 0;
     } */
-    .education-right{
+    .resume-right{
         padding: 0 0 0 20px;
     }
-    .education-left{
+    .resume-left{
         padding: 0 20px 0 0;
     }
-    .education-right, .education-left {
+    .resume-right, .resume-left {
         
         border-radius: 10px;
         width: 50%;
@@ -742,19 +755,19 @@ footer {
         padding: 60px 20px;
         margin: 0 auto;
     }
-    .education-container {
+    .resume-container {
         flex-direction: column;
         display: flex;
         justify-content: space-between;
         margin: 60px 0;
     }
-    .education-right{
+    .resume-right{
         padding: 20px 20px 0 20px;
     }
-    .education-left{
+    .resume-left{
         padding: 0 20px 20px 20px;
     }
-    .education-right, .education-left {
+    .resume-right, .resume-left {
         
         border-radius: 10px;
         width: 100%;

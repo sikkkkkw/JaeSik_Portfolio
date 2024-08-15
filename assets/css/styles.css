@@ -488,12 +488,16 @@ iframe {
     border: 1px solid #888;
     width: 80%;
     max-width: 50%;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
+
 
 .modal-content img {
     width: 100%;
-    height: auto;
+    height: 450px;
     margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 /* 모달 설명글 스타일 */

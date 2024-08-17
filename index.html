@@ -54,15 +54,15 @@
                         <img src="./assets/images/html.svg" alt="Example Image" width="60" height="60">
                         <img src="./assets/images/css.svg" alt="Example Image" width="60" height="60">
                         <img src="./assets/images/JavaScript.svg" alt="Example Image" width="60" height="60">
-                        <img src="./assets/images/react.svg" alt="Example Image" width="60" height="60">
+                        <img src="./assets/images/react.svg" alt="react Image" width="60" height="60">
                         <img src="./assets/images/node.svg" alt="node.js Image" width="60" height="60">
-                        <img src="./assets/images/php.svg" alt="Example Image" width="60" height="60">
-                        <img src="./assets/images/java.svg" alt="Example Image" width="60" height="60">
+                        <img src="./assets/images/php.svg" alt="php Image" width="60" height="60">
+                        <img src="./assets/images/java.svg" alt="java Image" width="60" height="60">
                         <img src="./assets/images/pytho.webp" alt="Example Image" width="60" height="60">
                         <img src="./assets/images/mysql.svg" alt="Example Image" width="60" height="60">
-                        <img src="./assets/images/mongo.svg" alt="node.js Image" width="60" height="60">
-                        <img src="./assets/images/figma.svg" alt="node.js Image" width="60" height="60">
-                        <img src="./assets/images/dart.svg" alt="node.js Image" width="60" height="60">
+                        <img src="./assets/images/mongo.svg" alt="mongo.js Image" width="60" height="60">
+                        <img src="./assets/images/figma.svg" alt="figma.js Image" width="60" height="60">
+                        <img src="./assets/images/dart.svg" alt="dart.js Image" width="60" height="60">
                         <h3 class="studying">STUDYING</h3>
                         <img src="./assets/images/react.svg" alt="Example Image" width="60" height="60">
                         <img src="./assets/images/next.svg" alt="Example Image" width="60" height="60">
@@ -117,7 +117,16 @@
                 <div class="project-container">
                     <div class="project-right">
                         <h1 class="project-resume">PROJECT</h1>
-                        <div class="project-bottom">
+                        <div class="filter-container">
+                            <select id="yearFilter">
+                                <option value="all">전체</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                            </select>
+                        </div>
+                        <div class="project-bottom" data-year="2024">
                             <img src="./assets/images/원데이클래스.png" alt="원데이클래스" />
                                 <div class="project-info">
                                     <h2>
@@ -141,7 +150,7 @@
                                     </div>
                                 </div>
                         </div>
-                        <div class="project-bottom">
+                        <div class="project-bottom" data-year="2024">
                             <img src="./assets/images/헤어브이.png" alt="헤어브이" />
                                 <div class="project-info">
                                     <h2>헤어브이</h2>
@@ -164,7 +173,7 @@
                                     </div>
                                 </div>
                         </div>
-                        <div class="project-bottom">
+                        <div class="project-bottom" data-year="2023">
                             <img src="./assets/images/영진직업전문학교 리뉴얼 페이지.PNG" alt="리뉴얼" />
                                 <div class="project-info">
                                     <h2> 취업지원센터 리뉴얼</h2>
@@ -187,7 +196,7 @@
                                     </div>
                                 </div>
                         </div>
-                        <div class="project-bottom">
+                        <div class="project-bottom" data-year="2024">
                             <img src="./assets/images/todolist.PNG" alt="투두" />
                                 <div class="project-info">
                                     <h2>To-do List</h2>
@@ -196,10 +205,9 @@
                                         <span class="badge cafe24">Node.js</span>
                                     </p>
                                     <p>작업범위: 
-                                        <span class="badge main">메인</span>
-                                        <span class="badge sub">서브</span>
-                                        <span class="badge sub">디테일</span>
-                                        <span class="badge sub">API활용</span>
+                                        <span class="badge main">메인페이지</span>
+                                        <span class="badge sub">서버구축</span>
+                                        <span class="badge sub">RESTful API</span>
                                     </p>
                                     <p>작업기여도: <strong>100%</strong></p>
                                     <div class="buttons">
@@ -208,7 +216,7 @@
                                     </div>
                                 </div>
                         </div>
-                        <div class="project-bottom">
+                        <div class="project-bottom" data-year="2023">
                             <img src="./assets/images/jsp명함.png" alt="JSP" />
                                 <div class="project-info">
                                     <h2>JSP명함 관리</h2>
@@ -233,11 +241,34 @@
                                     </div>
                                 </div>
                         </div>
+                        <div class="project-bottom" data-year="2022">
+                            <img src="./assets/images/로그인창.jpg" alt="JAVA" />
+                                <div class="project-info">
+                                    <h2>카페 주문 프로그램</h2>
+                                    <p>기술: 
+                                        <span class="badge cafe24">JAVA</span>
+                                        <span class="badge cafe24">MySQL</span>
+                                    </p>
+                                    <p>작업범위: 
+                                        <span class="badge main">메인</span>
+                                        <span class="badge sub">서브</span>
+                                        <span class="badge product-list">로그인</span>
+                                        <span class="badge product-list">회원가입</span>
+                                        <span class="badge product-list">상품목록</span>
+                                        <span class="badge product-list">장바구니</span>
+                                    </p>
+                                    <p>작업기여도: <strong>70%</strong></p>
+                                    <div class="buttons">
+                                        <a href="https://drive.google.com/file/d/1LWKBSdnxU-YglAEPvEh-dm6QliIwLs3h/view?usp=drive_link" class="button">Drive로 이동</a>
+                                        <a  class="open-modal button" data-modal="modal9">자세히 보기</a>
+                                    </div>
+                                </div>
+                        </div>
                         
                     </div>
                     <!-- 경계선 -->
                     <div class="project-left">
-                        <div class="project-bottom">
+                        <div class="project-bottom" data-year="2024">
                             <img src="./assets/images/도게더1.png" alt="도게더" />
                                 <div class="project-info">
                                     <h2>Dogether</h2>
@@ -263,10 +294,10 @@
                                     </div>
                                 </div>
                         </div>
-                        <div class="project-bottom">
+                        <div class="project-bottom" data-year="2023">
                             <img src="./assets/images/굴러가죠.PNG" alt="굴러가죠" />
                                 <div class="project-info">
-                                    <h2>라즈베리파이를 활용한 자율주행(졸업작품)</h2>
+                                    <h2>라즈베리파이를 활용한 자율주행</h2>
                                     <p>기술: 
                                         <span class="badge cafe24">Python</span>
                                         <span class="badge cafe24">Ubuntu</span>
@@ -284,7 +315,7 @@
                                     </div>
                                 </div>
                         </div>
-                        <div class="project-bottom">
+                        <div class="project-bottom" data-year="2024">
                             <img src="./assets/images/swagger.JPG" alt="스웨거" />
                                 <div class="project-info">
                                     <h2>Swagger명세서</h2>
@@ -303,7 +334,7 @@
                                     </div>
                                 </div>
                         </div>
-                        <div class="project-bottom">
+                        <div class="project-bottom" data-year="2021">
                             <img src="./assets/images/업다운게임.png" alt="미연시" />
                                 <div class="project-info">
                                     <h2>파이썬 조별과제</h2>
@@ -324,26 +355,43 @@
                                 </div>
                         </div>
                         
-                        <div class="project-bottom">
-                            <img src="./assets/images/로그인창.jpg" alt="JAVA" />
+                        <div class="project-bottom" data-year="2022">
+                            <img src="./assets/images/루피퍼즐.JPG" alt="JAVA" />
                                 <div class="project-info">
-                                    <h2>카페 주문 프로그램</h2>
+                                    <h2>퍼즐게임</h2>
                                     <p>기술: 
                                         <span class="badge cafe24">JAVA</span>
-                                        <span class="badge cafe24">MySQL</span>
                                     </p>
                                     <p>작업범위: 
-                                        <span class="badge main">메인</span>
-                                        <span class="badge sub">서브</span>
-                                        <span class="badge product-list">로그인</span>
-                                        <span class="badge product-list">회원가입</span>
-                                        <span class="badge product-list">상품목록</span>
-                                        <span class="badge product-list">장바구니</span>
+                                        <span class="badge product-list">랜덤배치</span>
+                                    </p>
+                                    <p>작업기여도: <strong>100%</strong></p>
+                                    <div class="buttons">
+                                        <a href="https://drive.google.com/file/d/1LWKBSdnxU-YglAEPvEh-dm6QliIwLs3h/view?usp=drive_link" id="disabledLink" class="button">Drive로 이동</a>
+                                        <a  class="open-modal button" data-modal="modal11">자세히 보기</a>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="project-bottom" data-year="2024">
+                            <img src="./assets/images/flutter.jpg" alt="FLUTTER" />
+                                <div class="project-info">
+                                    <h2>우리가 몰랐던 대구의 역사</h2>
+                                    <p>기술: 
+                                        <span class="badge cafe24">Flutter</span>
+                                        <span class="badge cafe24">Node.js</span>
+                                        <span class="badge cafe24">Figma</span>
+                                    </p>
+                                    <p>작업범위: 
+                                        <span class="badge product-list">메인</span>
+                                        <span class="badge product-list">유저</span>
+                                        <span class="badge product-list">사전</span>
+                                        <span class="badge product-list">QR스크린</span>
+                                        <span class="badge product-list">RESTful API</span>
                                     </p>
                                     <p>작업기여도: <strong>70%</strong></p>
                                     <div class="buttons">
-                                        <a href="https://drive.google.com/file/d/1LWKBSdnxU-YglAEPvEh-dm6QliIwLs3h/view?usp=drive_link" class="button">Drive로 이동</a>
-                                        <a  class="open-modal button" data-modal="modal9">자세히 보기</a>
+                                        <a href="https://drive.google.com/file/d/1p0iyy34-ynjHeS-vEQITldLodl1fdKCQ/view?usp=sharing" class="button">APK Link</a>
+                                        <a  class="open-modal button" data-modal="modal12">자세히 보기</a>
                                     </div>
                                 </div>
                         </div>
@@ -484,7 +532,7 @@
                     <p class="mt">작업범위: 
                         <span class="badge main">메인페이지</span>
                         <span class="badge sub">서버구축</span>
-                        <span class="badge product-detail">API구현</span>
+                        <span class="badge sub">RESTful API</span>
                     </p>
                     <div class="flex-bar">
                         <p class="mt">작업기여도:</p>
@@ -545,32 +593,35 @@
             <div id="modal6" class="modal">
                 <div class="modal-content">
                     <img src="./assets/images/swagger.JPG" alt="swagger" class="modal-image" />
-                    <h2>Swagger명세서</h2>
-                    <p class="mt">기술: 
+                    <h2>Swagger 명세서</h2>
+                    <p class="mt">사용 기술: 
                         <span class="badge cafe24">Swagger</span>
                         <span class="badge cafe24">Node.js</span>
                     </p>
-                    <p class="mt">작업범위: 
-                        <span class="badge sub">메인페이지</span>
-                        <span class="badge main">RESTful API구현</span>
+                    <p class="mt">작업 범위: 
+                        <span class="badge sub">메인 페이지</span>
+                        <span class="badge main">RESTful API 구현</span>
                     </p>
                     <div class="flex-bar">
-                        <p class="mt">작업기여도:</p>
+                        <p class="mt">작업 기여도:</p>
                         <div class="progress-bar">
                             <div class="progress-bar-fill" style="width: 100%;"></div>
                         </div>
                     </div>
                     
                     <p class="modal-description">
-                        RESTful API을 활용하여 API를 구현 해봤고 Swagger명세서를 제작하여 프론트와 협업이 원할했습니다.
+                        이 프로젝트에서는 RESTful API를 구축하고, 이를 문서화하기 위해 Swagger를 활용했습니다. Swagger 명세서를 통해 API의 구조와 사용법을 명확히 정의함으로써, 프론트엔드와의 협업이 원활하게 진행되었습니다. 이 명세서는 개발 과정에서 발생할 수 있는 혼란을 최소화하고, 일관된 API 설계를 유지하는 데 중요한 역할을 했습니다.
                     </p>
                     <h3>주요 기능</h3>
                     <ul class="modal-features">
-                        <li>명세서 작성</li>
-                        <li>REST API를 개발 및 구현</li>
+                        <li>Swagger를 사용한 API 명세서 작성</li>
+                        <li>Node.js를 활용한 RESTful API 개발 및 구현</li>
+                        <li>API의 구조화 및 명확한 문서화</li>
+                        <li>API 테스트 및 디버깅을 위한 효율적인 워크플로우 구축</li>
                     </ul>
                 </div>
             </div>
+            
             <!-- 모달7 -->
             <div id="modal7" class="modal">
                 <div class="modal-content">
@@ -709,6 +760,72 @@
                         <li>자율주행 </li>
                         <li>수동조작</li>
                         <li>라인트레이서</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 모달11 -->
+            <div id="modal11" class="modal">
+                <div class="modal-content">
+                    <img src="./assets/images/루피퍼즐.JPG" alt="JAVA" class="modal-image" />
+                    <h2>퍼즐게임</h2>
+                    <p class="mt">기술: 
+                        <span class="badge cafe24">JAVA</span>
+                    </p>
+                    <p class="mt">작업범위: 
+                        <span class="badge product-detail">랜덤배치</span>
+                    </p>
+                    <div class="flex-bar">
+                        <p class="mt">작업기여도:</p>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    
+                    <p class="modal-description">
+                        랜덤함수를 활용해 퍼즐 조각이 무작위로 배치되도록 구현했습니다. 
+                        이 프로젝트는 교내 응용 프로그래밍 경진대회에서 좋은 평가를 받아 동상을 수상하였습니다.
+                    </p>
+                    <h3>주요 기능</h3>
+                    <ul class="modal-features">
+                        <li>랜덤함수를 사용해서 퍼즐 랜덤 배치</li>
+                        <li>조각을 클릭 및 드래그하여 위치 변경 가능</li>
+                        <li>게임 완성 시 완료 표시</li>
+                    </ul>
+                </div>
+            </div>
+             <!-- 모달12 -->
+            <div id="modal12" class="modal">
+                <div class="modal-content">
+                    <img src="./assets/images/flutter.jpg" alt="Flutter" class="modal-image" />
+                    <h2>우리가 몰랐던 대구의 역사: 대구시민 걷기 앱</h2>
+                    <p>기술: 
+                        <span class="badge cafe24">Flutter</span>
+                        <span class="badge cafe24">Node.js</span>
+                        <span class="badge cafe24">MariaDB</span>
+                        <span class="badge cafe24">Figma</span>
+                    </p>
+                    <p>작업범위: 
+                        <span class="badge product-list">메인</span>
+                        <span class="badge product-list">유저</span>
+                        <span class="badge product-list">사전</span>
+                        <span class="badge product-list">QR스크린</span>
+                        <span class="badge product-list">RESTful API</span>
+                    </p>
+                    <div class="flex-bar">
+                        <p class="mt">작업기여도:</p>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <p class="modal-description">
+                        이 프로젝트는 Open API를 활용하여 대구 시민을 위한 GPS 인증 걷기 앱을 개발하는 것이었습니다. 저는 주로 백엔드 개발을 담당하여 서버 관리와 API 설계를 진행했습니다. 
+                        또한, 프론트엔드 개발자들과의 원활한 협업을 위해 Swagger를 이용해 API 문서를 작성했습니다.
+                    </p>
+                    <h3>주요 기능</h3>
+                    <ul class="modal-features">
+                        <li>회원 가입 및 로그인 시 JWT방식 엑세스 토큰 리플레쉬 토큰 발급</li>
+                        <li>코스 범위에 들어왔을 시 하단에 코스의 간단한 정보와 QR코드를 찍을 수 있는 버튼 활성화</li>
+                        <li>방문 성공 시 DB에 방문 데이터 저장</li>
                     </ul>
                 </div>
             </div>

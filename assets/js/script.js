@@ -102,3 +102,23 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Check the initial scroll position
 });
+// 년도별 필터
+document.getElementById('yearFilter').addEventListener('change', function() {
+    const selectedYear = this.value;
+    const projects = document.querySelectorAll('.project-bottom');
+
+    projects.forEach(project => {
+        if (selectedYear === 'all') {
+            project.style.display = 'block';
+        } else if (project.dataset.year === selectedYear) {
+            project.style.display = 'block';
+        } else {
+            project.style.display = 'none';
+        }
+    });
+});
+// 클릭 비활성화
+document.getElementById('disabledLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    alert('이 링크는 현재 비활성화되어 있습니다.');
+});

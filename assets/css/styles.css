@@ -82,14 +82,15 @@ header {
 header h1 {
     margin: 0 15px;
     font-size: 1.8em;
-    color: #7f7fd5;
+    color: #86a8e7;
     font-weight:bold;
     font-family: 'Pretendard-Regular';
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-brand:hover h1 {
-    color: #00c4cc;
+    color: #7f7fd5;
+    
     transform: scale(1.05); /* 로고 텍스트에 확대 효과 추가 */
 }
 
@@ -120,13 +121,13 @@ nav ul li {
     position: relative;
     font-size: 1.4rem;
     font-weight: bold;
-    color: #7f7fd5 ;
+    color: #86a8e7 ;
     text-decoration: none;
     transition: color 0.3s ease, font-size 0.3s ease, transform 0.3s ease;
 }
 
 .nav-ul li a:hover {
-    color: #00c4cc;
+    color: #7f7fd5;
     transform: scale(1.1); /* 메뉴 항목 확대 효과 추가 */
 }
 
@@ -136,7 +137,7 @@ nav ul li {
     display: block; /* 블록 요소로 설정하여 텍스트 길이에 맞춤 */
     width: 100%; /* 텍스트 길이에 맞게 100% */
     height: 2px;
-    background-color: #00c4cc;
+    background-color: #7f7fd5;
     margin-top: 5px; /* 밑줄과 텍스트 사이의 간격 조정 */
     transform: scaleX(0); /* 초기 크기를 0으로 설정 */
     transform-origin: left; /* 밑줄이 왼쪽에서 확장 */
@@ -162,6 +163,7 @@ nav ul li {
     flex-direction: column;
     position: relative;
     background: rgba(255, 255, 255, 0.8);
+    
     padding: 40px;
 }
 .mainbox::before {
@@ -236,7 +238,7 @@ main {
 
 .resume-right h1.resume {
     font-size: 2.5rem;
-    color: #7f7fd5;
+    color: #86a8e7;
     margin-bottom: 1rem;
 }
 .skill {
@@ -356,7 +358,7 @@ main {
     font-size: 1.4rem; /* 텍스트 크기 */
     border: none; /* 테두리 제거 */
     border-radius: 30px; /* 버튼의 모서리를 둥글게 */
-    background: #7f7fd5; /* 배경 색상 */
+    background: #86a8e7; /* 배경 색상 */
     color: #fff; /* 텍스트 색상 */
     cursor: pointer; /* 마우스를 올렸을 때 커서 변경 */
     transition: background-color 0.3s, transform 0.3s; /* 색상 및 크기 변화에 애니메이션 적용 */
@@ -373,7 +375,7 @@ main {
 
 /* 마우스를 올렸을 때 배경 색상 및 크기 변화 */
 .btn-container a:hover {
-    background-color: #007b83; /* 배경 색상 변경 */
+    background-color: #7f7fd5; /* 배경 색상 변경 */
     transform: scale(1.05); /* 버튼을 살짝 키움 */
 }
 
@@ -385,7 +387,7 @@ main {
     padding: 1.2rem;
     border-radius: 10px;
     border: 1px solid #ddd;
-    background: #fff;
+    background: #f9f9f9;
     margin-bottom: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -450,6 +452,7 @@ main {
     margin: 0 10px;
     padding: 20px;
     background-color: #fff;
+   
 
 }
 
@@ -457,7 +460,7 @@ main {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
-    font-family: 'GmarketSansMedium';
+    font-family: 'Pretendard-Regular';
 }
 
 .project-info p {
@@ -485,8 +488,8 @@ main {
 }
 
 .cafe24 {
-    background-color: #00a1e4;
-    color: #fff;
+    background-color: #91eae4;
+    color: #000;
 }
 
 .coding {
@@ -495,7 +498,7 @@ main {
 }
 
 .main, .product-list, .product-detail, .sub {
-    background-color: #ffc107;
+    background-color: #86a8e7;
     color: #000;
 }
 
@@ -527,11 +530,38 @@ main {
     overflow: hidden; /* 텍스트 오버플로 방지 */
 }
 .button:hover {
-    background-color: #0056b3;
+    background-color: #7f7fd5;
 }
 .buttons button:hover {
     background-color: #000;
     color: #fff;
+}
+.animated-link {
+    color: black;
+    text-decoration: none; /* 기본 링크 밑줄 제거 */
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+/* 색상 애니메이션 */
+@keyframes colorChange {
+    0% { color: black; }
+    50% { color: #00c4cc; } /* 중간 색상 */
+    100% { color: black; }
+}
+
+/* 링크에 애니메이션 적용 */
+.animated-link {
+    animation: colorChange 2s infinite; /* 애니메이션 설정 */
+}
+
+/* 호버 시 애니메이션 효과 */
+.animated-link:hover {
+    color: #00c4cc; /* 호버 시 색상 변경 */
+    animation: none; /* 호버 시 애니메이션 중지 */
 }
 /* 게시판 섹션 */
 .section {
@@ -575,7 +605,7 @@ iframe {
     box-sizing: border-box;
 }
 .modal-content h2{
-    font-family: 'GmarketSansMedium';
+    font-family: 'Pretendard-Regular';
 }
 
 
@@ -629,7 +659,7 @@ iframe {
     left: 0;
     top: 0;
     font-size: 18px;
-    color: #4CAF50; /* 체크 마크 색상 */
+    color: #86a8e7; /* 체크 마크 색상 */
     line-height: 1.6;
 }
 .flex-bar {
@@ -651,7 +681,7 @@ iframe {
 
 .progress-bar-fill {
     height: 100%;
-    background-color: #4CAF50;
+    background-color: #7f7fd5;
     border-radius: 10px 0 0 10px; /* 좌측만 둥글게 설정 */
     transition: width 0.4s ease; /* 부드러운 애니메이션 효과 */
 }
@@ -660,7 +690,8 @@ iframe {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.3); /* 반투명 배경 */
+    background-color: rgba(#91eae4, 0.3); /* 반투명 배경 */
+    
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -673,7 +704,7 @@ iframe {
     width: 50px;
     height: 50px;
     border: 5px solid #f3f3f3;
-    border-top: 5px solid #3498db;
+    border-top: 5px solid #86a8e7;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }

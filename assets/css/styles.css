@@ -13,7 +13,20 @@ body {
     line-height: 1.6;
     background-color: white;
     color: #333;
-    height: 100%;
+    
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* 헤더 스타일링 */
@@ -27,9 +40,17 @@ header {
     left: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.6s ease;
-    transform: translateY(-100%);
+    transform: translateY(0);
+    transition: transform 0.6s ease, background 0.6s ease;
     font-family: 'Helvetica Neue', Arial, sans-serif; /* 글꼴 적용 */
+}
+
+.scrolled {
+    transform: translateY(-100%);
+}
+
+.headerVisible {
+    transform: translateY(0);
 }
 
 /* 헤더 내 flex 컨테이너 */
@@ -61,7 +82,15 @@ header {
 header h1 {
     margin: 0 15px;
     font-size: 1.8em;
-    color: #007bff; /* 텍스트 색상 변경 */
+    color: #7f7fd5;
+    font-weight:bold;
+    font-family: 'Pretendard-Regular';
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-brand:hover h1 {
+    color: #00c4cc;
+    transform: scale(1.05); /* 로고 텍스트에 확대 효과 추가 */
 }
 
 /* 내비게이션 스타일링 */
@@ -80,7 +109,9 @@ nav ul {
 
 nav ul li {
     list-style-type: none;
+    font-family: 'Pretendard-Regular';
 }
+
 /* 네비게이션 링크 스타일링 */
 .nav-ul li a {
     margin-top: 10px;
@@ -88,9 +119,15 @@ nav ul li {
     display: inline-block;
     position: relative;
     font-size: 1.4rem;
-    color: #007bff;
+    font-weight: bold;
+    color: #7f7fd5 ;
     text-decoration: none;
-    transition: color 0.3s ease, font-size 0.3s ease;
+    transition: color 0.3s ease, font-size 0.3s ease, transform 0.3s ease;
+}
+
+.nav-ul li a:hover {
+    color: #00c4cc;
+    transform: scale(1.1); /* 메뉴 항목 확대 효과 추가 */
 }
 
 /* 밑줄 추가를 위한 ::after 의사 요소 사용 */
@@ -99,7 +136,7 @@ nav ul li {
     display: block; /* 블록 요소로 설정하여 텍스트 길이에 맞춤 */
     width: 100%; /* 텍스트 길이에 맞게 100% */
     height: 2px;
-    background-color: #007bff;
+    background-color: #00c4cc;
     margin-top: 5px; /* 밑줄과 텍스트 사이의 간격 조정 */
     transform: scaleX(0); /* 초기 크기를 0으로 설정 */
     transform-origin: left; /* 밑줄이 왼쪽에서 확장 */
@@ -110,12 +147,6 @@ nav ul li {
 .nav-ul li a:hover::after {
     transform: scaleX(1); /* 밑줄이 텍스트 길이에 맞게 확장 */
 }
-
-/* 네비게이션 링크에 마우스를 올렸을 때 */
-.nav-ul li a:hover {
-    color: #0056b3;
-}
-
 /* 스크롤 시 헤더 숨김 */
 .scrolled {
     top: -100px;
@@ -124,18 +155,50 @@ nav ul li {
 /* 메인화면 */
 .mainbox {
     width: 100%;
-    height: 100vh; /* 전체 화면 높이에서 헤더 높이를 뺀 값 */
-    background-color: red;
+    height: 100vh;
     display: flex;
-    justify-content: center; /* 수평 중앙 정렬 */
-    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+}
+.mainbox::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4), transparent 70%);
+    filter: blur(50px);
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+}
+.mainbox h1, .mainbox p {
+    font-size: 120px; /* 텍스트 크기 통일 */
+    font-weight: bold;
+    background: linear-gradient(120deg, #7f7fd5, #86a8e7, #91eae4);
+    background-size: 200% 200%;
+    animation: galaxyGradient 5s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6),
+                 0 0 30px rgba(255, 255, 255, 0.4);
+    margin: 0;
+    padding: 10px;
+    z-index: 1;
+    text-align: center; /* 텍스트 가운데 정렬 */
+    letter-spacing: -1px;
+    line-height: 1; 
 }
 
-.mainbox span {
-    font-size: 36px;
-    color: #fff; /* 텍스트 색상 */
+@keyframes galaxyGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
-
 
 /* 메인 섹션 스타일링 */
 main {
@@ -145,6 +208,7 @@ main {
     max-width: 1280px;
     margin: 0 auto;
     flex: 1; 
+    
 }
 
 /* resume 세션  */
@@ -180,7 +244,7 @@ main {
 }
 .studying{
     margin-top: 15px;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: #333;
     margin-bottom: 1rem;
 }
@@ -193,6 +257,7 @@ main {
     line-height: 2;
     word-break: keep-all; 
     white-space: normal;
+    font-family: 'Pretendard-Regular';
     
 }
 .resume-right span{
@@ -210,15 +275,17 @@ main {
 
 
 .resume-right h3.resume, .resume-left h3.skill {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: #333;
     margin-bottom: 1rem;
 }
 /* about 세션 */
+
 #about{
     min-height: 100vh;
     opacity: 0;
-    transition: opacity 1s ease-in-out;   
+    transition: opacity 1s ease-in-out;  
+    
 }
 .fade-in {
     opacity: 1 !important;
@@ -254,6 +321,7 @@ main {
     
 }
 .about-right h3{
+    font-family: 'GmarketSansMedium';
     font-size: 2.5rem;
     color: #333;
     line-height: 1.7;
@@ -293,6 +361,7 @@ main {
     cursor: pointer; /* 마우스를 올렸을 때 커서 변경 */
     transition: background-color 0.3s, transform 0.3s; /* 색상 및 크기 변화에 애니메이션 적용 */
     text-decoration: none; 
+    font-family: 'Pretendard-Regular';
 }
 
 /* GitHub 아이콘 스타일 */
@@ -326,6 +395,7 @@ main {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
 .details-container h3 {
+    font-family: 'GmarketSansMedium';
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 1rem;
@@ -334,6 +404,7 @@ main {
     font-size: 18px;
     color: #666;
     line-height: 1.5;
+    font-family: 'Pretendard-Regular';
 }
 
 /* 프로젝트 세션 */
@@ -365,20 +436,14 @@ main {
 .project-right img{
     width: 100%;
     height: 301px;
-    margin-bottom: 20px;
-    border-top: 1px solid #000; /* 상단에만 선 추가 */
-    border-left: 1px solid #000; /* 왼쪽에만 선 추가 */
-    border-right: 1px solid #000;
+   
     border-radius: 10px 10px 0 0;
     animation: borderAnimation 2s ease forwards;
 }
 .project-left img{
     width: 100%;
     height: 301px;
-    margin-bottom: 20px;
-    border-top: 1px solid #000; /* 상단에만 선 추가 */
-    border-left: 1px solid #000; /* 왼쪽에만 선 추가 */
-    border-right: 1px solid #000;
+   
     border-radius: 10px 10px 0 0;
 }
 .project-info{
@@ -392,10 +457,12 @@ main {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+    font-family: 'GmarketSansMedium';
 }
 
 .project-info p {
     margin: 5px 0;
+    font-family: 'Pretendard-Regular';
 }
 .project-left{
     margin-top: 110px;
@@ -403,7 +470,9 @@ main {
 .project-bottom{
     margin-bottom: 20px;
     border-radius: 10px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    font-family: 'Pretendard-Regular';
 }
 
 .badge {
@@ -444,7 +513,7 @@ main {
 .button {
     display: inline-block;
     padding: 10px 40px; /* 패딩을 줄여서 작은 화면에서도 잘 보이도록 설정 */
-    background-color: #007BFF;
+    background-color: #86a8e7;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -498,11 +567,14 @@ iframe {
     background-color: #fff;
     margin: 1% auto;
     padding: 20px;
-    border: 1px solid #888;
+    /* border: 1px solid #888; */
     width: 80%;
     max-width: 50%;
     border-radius: 8px;
     box-sizing: border-box;
+}
+.modal-content h2{
+    font-family: 'GmarketSansMedium';
 }
 
 
@@ -511,6 +583,7 @@ iframe {
     height: 420px;
     /* margin-bottom: 20px; */
     border-radius: 8px;
+    border: 1px solid #888;
 }
 
 /* 모달 설명글 스타일 */
@@ -521,9 +594,11 @@ iframe {
     line-height: 1.6;
     word-break: keep-all; /* 단어가 중간에서 잘리지 않도록 설정 */
     white-space: normal;
+    font-family: 'Pretendard-Regular';
 }
 .mt{
     margin-top: 8px;
+    font-family: 'Pretendard-Regular';
 }
 
 .modal-footer {
@@ -544,6 +619,7 @@ iframe {
     font-size: 14px;
     color: #333;
     line-height: 1.6;
+    font-family: 'Pretendard-Regular';
 }
 
 .modal-features li::before {
@@ -636,38 +712,9 @@ footer {
 
 /* 반응형 디자인 */
 @media (max-width: 1280px) {
-    
-    /* .headerFlex {
-        flex-direction: column;
-        align-items: center;
+    .mainbox h1, .mainbox p {
+        font-size: 90px; /* 텍스트 크기 축소 */
     }
-
-    .navbar-brand {
-        margin-bottom: 15px;
-    }
-
-    .navbar-brand img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .nav-flex {
-        justify-content: center;
-    }
-
-    nav ul {
-        display: flex;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin-bottom: 1rem;
-    }
-
-    .nav-ul li a {
-        padding: 0.5rem 1rem;
-        font-size: 18px;
-    } */
     main {
         width: 100%;
         height: 100%;
@@ -725,19 +772,18 @@ footer {
         width: 100%;
         height: 100%;
         margin-bottom: 20px;
-        border: 1px solid #000;
+       
     }
     .project-left img{
         width: 100%;
         height: 100%;
         margin-bottom: 20px;
-        border: 1px solid #000;
+        
     }
     .modal-content {
         background-color: #fff;
         margin: 1% auto;
         padding: 20px;
-        border: 1px solid #888;
         width: 80%;
         max-width: 90%;
         border-radius: 8px;
@@ -859,7 +905,11 @@ footer {
     }
 
 }
-
+@media (max-width: 768px) {
+    .mainbox h1, .mainbox p {
+        font-size: 70px; /* 태블릿 사이즈 */
+    }
+}
 @media (max-width: 470px) {
     .nav-flex {
         display: flex;
@@ -915,6 +965,25 @@ footer {
         margin-right: 1px;
         border-radius: 5px;
         transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-container a {
+        display: inline-flex;
+        align-items: center;
+        padding: 1rem 3rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #00c4cc;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        text-decoration: none;
+    }
+    .mainbox h1, .mainbox p {
+        font-size: 50px; /* 작은 화면 사이즈 */
+    }
+    .mainbox {
+        padding: 20px; /* 패딩 축소 */
     }
 
 }

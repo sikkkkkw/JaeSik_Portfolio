@@ -122,3 +122,62 @@ document.getElementById('disabledLink').addEventListener('click', function(event
     event.preventDefault();
     alert('이 링크는 현재 비활성화되어 있습니다.');
 });
+// 푸터 폭죽
+document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.querySelector('footer');
+    const fireworksContainer = document.getElementById('fireworks');
+    
+    footer.addEventListener('click', function() {
+        createFireworks();
+    });
+
+    function createFireworks() {
+        const numSparks = 50; // 폭죽의 스파크 개수
+        for (let i = 0; i < numSparks; i++) {
+            const spark = document.createElement('div');
+            spark.className = 'spark';
+            const size = Math.random() * 10 + 5; // 스파크의 크기
+            spark.style.width = `${size}px`;
+            spark.style.height = `${size}px`;
+            spark.style.left = `${Math.random() * 100}vw`;
+            spark.style.top = `${Math.random() * 100}vh`;
+            spark.style.opacity = '1';
+            fireworksContainer.appendChild(spark);
+            
+            // 애니메이션이 끝난 후 스파크 요소를 제거합니다.
+            setTimeout(() => {
+                fireworksContainer.removeChild(spark);
+            }, 1000);
+        }
+    }
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const triggerElements = document.querySelectorAll('#trigger');
+    const fireworksContainer = document.getElementById('fireworks1');
+
+    triggerElements.forEach(element => {
+        element.addEventListener('click', function() {
+            createFireworks();
+        });
+    });
+
+    function createFireworks() {
+        const numSparks = 50; // 폭죽의 스파크 개수
+        for (let i = 0; i < numSparks; i++) {
+            const spark = document.createElement('div');
+            spark.className = 'spark';
+            const size = Math.random() * 15 + 10; // 스파크의 크기
+            spark.style.width = `${size}px`;
+            spark.style.height = `${size}px`;
+            spark.style.left = `${Math.random() * 100}vw`;
+            spark.style.top = `${Math.random() * 100}vh`;
+            spark.style.opacity = '1';
+            fireworksContainer.appendChild(spark);
+            
+            // 애니메이션이 끝난 후 스파크 요소를 제거합니다.
+            setTimeout(() => {
+                fireworksContainer.removeChild(spark);
+            }, 700); // 애니메이션에 맞게 타이밍 조정
+        }
+    }
+});

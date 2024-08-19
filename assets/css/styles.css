@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    user-select: none;
 }
 
 
@@ -27,6 +28,31 @@ body {
     src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+}
+/* 전체 스크롤바 스타일 */
+::-webkit-scrollbar {
+    width: 12px; /* 스크롤바 너비 */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* 트랙 배경색 */
+    border-radius: 6px; /* 트랙의 둥근 모서리 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(120deg, #7f7fd5, #86a8e7, #91eae4); /* 스크롤바 색상 */
+    border-radius: 6px; /* 스크롤바의 둥근 모서리 */
+    border: 3px solid rgba(255, 255, 255, 0.6); /* 스크롤바의 테두리 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(120deg, #7f7fd5, #6fa3ef, #5dc1f1); /* 스크롤바 호버 색상 */
+}
+
+/* Firefox 스크롤바 스타일 */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #7f7fd5 rgba(0, 0, 0, 0.1);
 }
 
 /* 헤더 스타일링 */
@@ -163,21 +189,55 @@ nav ul li {
     flex-direction: column;
     position: relative;
     background: rgba(255, 255, 255, 0.8);
-    
     padding: 40px;
+    overflow: hidden;
 }
+/* 폭죽 애니메이션을 위한 스타일 */
+.fireworks1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.fireworks1 .spark {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 100, 0.8) 0%, rgba(255, 255, 100, 0) 70%);
+    opacity: 0;
+    animation: explode 0.7s ease-out; /* 폭죽 애니메이션 */
+}
+
+@keyframes explode {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(2); /* 스파크가 더 커지도록 설정 */
+    }
+}
+
 .mainbox::before {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4), transparent 70%);
-    filter: blur(50px);
-    opacity: 0.6;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 0;
+    transition: background 0.2s ease-out;
 }
+
 .mainbox h1, .mainbox p {
+    cursor: pointer;
     font-size: 120px; /* 텍스트 크기 통일 */
     font-weight: bold;
     background: linear-gradient(120deg, #7f7fd5, #86a8e7, #91eae4);
@@ -193,7 +253,7 @@ nav ul li {
     z-index: 1;
     text-align: center; /* 텍스트 가운데 정렬 */
     letter-spacing: -1px;
-    line-height: 1; 
+    line-height: 1;
 }
 
 @keyframes galaxyGradient {
@@ -471,7 +531,7 @@ main {
     margin-top: 110px;
 }
 .project-bottom{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border-radius: 10px; 
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
     background-color: white;
@@ -585,13 +645,13 @@ iframe {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
 .modal-content {
@@ -724,7 +784,7 @@ footer {
     bottom: 0;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* 위쪽에 그림자 추가 */
     font-family: 'Pretendard-Regular', Arial, sans-serif; /* 일관된 글꼴 */
-    z-index: 1000;
+    z-index: 900;
     animation: gradientShift 10s ease infinite;
 }
 
@@ -803,7 +863,37 @@ footer p {
     border-color: #00a1e4; /* 포커스 시 테두리 색상 변경 */
 }
 
+/* 폭죽 애니메이션을 위한 스타일 */
+.fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1000;
+}
 
+.fireworks .spark {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+    opacity: 0;
+    pointer-events: none;
+    animation: explode 1s ease-out;
+}
+
+@keyframes explode {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
 /* 반응형 디자인 */
 @media (max-width: 1280px) {
     .mainbox h1, .mainbox p {
@@ -1002,6 +1092,10 @@ footer p {
 @media (max-width: 768px) {
     .mainbox h1, .mainbox p {
         font-size: 70px; /* 태블릿 사이즈 */
+    }
+    .nav-ul li a {
+        padding: 0rem 1rem;
+        font-size: 18px;
     }
 }
 @media (max-width: 470px) {

@@ -151,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+// 폭죽
 document.addEventListener('DOMContentLoaded', function() {
     const triggerElements = document.querySelectorAll('#trigger');
     const fireworksContainer = document.getElementById('fireworks1');

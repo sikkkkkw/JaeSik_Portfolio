@@ -116,7 +116,6 @@ header h1 {
 
 .navbar-brand:hover h1 {
     color: #7f7fd5;
-    
     transform: scale(1.05); /* 로고 텍스트에 확대 효과 추가 */
 }
 
@@ -174,10 +173,32 @@ nav ul li {
 .nav-ul li a:hover::after {
     transform: scaleX(1); /* 밑줄이 텍스트 길이에 맞게 확장 */
 }
+
+/* 그라데이션 선 */
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px; /* 선의 높이 */
+    background: linear-gradient(90deg, #91eae4,#86a8e7,#7f7fd5);
+    background-size: 200% 100%; /* 애니메이션을 위한 배경 크기 설정 */
+    animation: moveGradient 5s ease infinite; /* 애니메이션 설정 */
+}
+
+/* 그라데이션 이동 애니메이션 */
+@keyframes moveGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 /* 스크롤 시 헤더 숨김 */
 .scrolled {
     top: -100px;
 }
+
 
 /* 메인화면 */
 .mainbox {
@@ -188,10 +209,12 @@ nav ul li {
     align-items: center;
     flex-direction: column;
     position: relative;
-    background: rgba(255, 255, 255, 0.8);
     padding: 40px;
     overflow: hidden;
+    /* background: url('../images/jsp명함.png') no-repeat center center; */
+    background-size: cover; /* 배경 이미지가 화면에 꽉 차도록 */
 }
+
 /* 폭죽 애니메이션을 위한 스타일 */
 .fireworks1 {
     position: absolute;
@@ -238,7 +261,7 @@ nav ul li {
 
 .mainbox h1, .mainbox p {
     cursor: pointer;
-    font-size: 120px; /* 텍스트 크기 통일 */
+    font-size: 120px;
     font-weight: bold;
     background: linear-gradient(120deg, #7f7fd5, #86a8e7, #91eae4);
     background-size: 200% 200%;
@@ -246,15 +269,19 @@ nav ul li {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6),
-                 0 0 30px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
     margin: 0;
     padding: 10px;
     z-index: 1;
-    text-align: center; /* 텍스트 가운데 정렬 */
+    text-align: center;
     letter-spacing: -1px;
     line-height: 1;
+    transform: rotate(-15deg); /* 텍스트를 기울이기 */
 }
+.mainbox p{
+    margin-left: 60px;
+}
+
 
 @keyframes galaxyGradient {
     0% { background-position: 0% 50%; }

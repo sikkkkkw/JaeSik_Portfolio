@@ -1114,6 +1114,12 @@ footer p {
     .progress-bar {
         width: 100%; /* 모바일에서는 전체 너비 사용 */
     }
+    .mainbox p{
+        margin-right: 60px;
+    }
+    .mainbox h1 {
+        margin-right: 30px;
+    }
 
 }
 @media (max-width: 768px) {
@@ -1124,6 +1130,8 @@ footer p {
         padding: 0rem 1rem;
         font-size: 18px;
     }
+    
+   
 }
 @media (max-width: 470px) {
     .nav-flex {
@@ -1198,7 +1206,15 @@ footer p {
         font-size: 50px; /* 작은 화면 사이즈 */
     }
     .mainbox {
-        padding: 20px; /* 패딩 축소 */
+        padding: 20px; 
     }
+    .mainbox p{
+        margin-right: 80px;
+    }
+    .mainbox h1 {
+        margin-right: 30px;
+    }
+    
+    
 
 }

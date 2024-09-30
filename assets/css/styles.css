@@ -15,6 +15,7 @@ body {
     background-color: white;
     color: #333;
     
+    
 }
 
 @font-face {
@@ -198,6 +199,46 @@ nav::after {
 .scrolled {
     top: -100px;
 }
+
+/* adsdsdsdsd */
+  
+  /* 텍스트에 마우스를 올렸을 때 이미지가 보이게 설정 */
+  .portfolio-text:hover ~ .navbar-brand .profile-pic {
+    opacity: 1;
+    transform: scale(1.2); /* 살짝 확대 효과 */
+  }
+  
+  /* 메인 박스 스타일링 */
+  .mainbox {
+    text-align: center;
+    margin-top: 100px;
+    position: relative;
+  }
+  
+  .portfolio-text {
+    font-size: 2.5rem;
+    font-family: 'Pretendard-Regular';
+    color: #86a8e7;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  /* 텍스트에 마우스를 올리면 확대 효과 */
+  .portfolio-text:hover {
+    transform: scale(1.1);
+  }
+  
+  /* 불꽃놀이 효과 추가 */
+  .fireworks1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: transparent;
+  }
+/* dsdsdsd */
 
 
 /* 메인화면 */
@@ -1217,4 +1258,41 @@ footer p {
     
     
 
+}
+.char,
+.word {
+    display: inline-block;
+}
+
+.splitting .char {
+    animation: slide-in 1s cubic-bezier(0.17, 0.84, 0.4, 1.49) both;
+    animation-delay: calc(30ms * var(--char-index));
+}
+
+[data-word="♬"] .char {
+    display: inline;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: scale(2) rotate(60deg);
+        opacity: 0;
+    }
+}
+
+@keyframes bump-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+particule {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 1px 1px 4px #eb6383;
 }

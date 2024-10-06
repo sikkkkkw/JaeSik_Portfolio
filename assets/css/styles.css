@@ -1295,4 +1295,6 @@ particule {
     width: 30px;
     height: 30px;
     box-shadow: 1px 1px 4px #eb6383;
+    pointer-events: none;
+    z-index: 9999;
 }

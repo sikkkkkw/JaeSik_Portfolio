@@ -182,17 +182,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+// 폭죽
 let particles = [];
 const colors = ["#eb6383", "#fa9191", "#ffe9c5", "#b4f2e1"];
 
 function pop() {
     for (let i = 0; i < 150; i++) {
         const p = document.createElement('particule');
+        p.style.position = "fixed"; // 화면 전체에 고정
         p.x = window.innerWidth * 0.5;
-        p.y = window.innerHeight + (Math.random() * window.innerHeight * 0.3);
+        p.y = window.innerHeight * 0.5;
         p.vel = {
-            x: (Math.random() - 0.5) * 10,
-            y: Math.random() * -20 - 15
+            x: (Math.random() - 0.5) * 40, // 더 넓게 퍼지도록 설정
+            y: Math.random() * -30 - 15
         };
         p.mass = Math.random() * 0.2 + 0.8;
         particles.push(p);
@@ -222,10 +224,10 @@ function render() {
     requestAnimationFrame(render);
 }
 
-// Start the particle rendering
+// 파티클 렌더링 시작
 window.setTimeout(render, 700);
 
-// Trigger pop function on clicking portfolio text
+// 포트폴리오 텍스트 클릭 시 pop 함수 실행
 const portfolioTexts = document.querySelectorAll('.portfolio-text');
 portfolioTexts.forEach(text => {
     text.addEventListener('click', pop);
